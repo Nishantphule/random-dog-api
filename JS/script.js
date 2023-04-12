@@ -5,7 +5,7 @@ const Random = document.getElementById("imageArea")
 const run = document.querySelector('button')
 
 async function getRandomDogs() {
-  
+  run.innerText="Next"
   // removing previous images
   Random.innerHTML = ""
   
@@ -23,7 +23,7 @@ async function getRandomDogs() {
   const Resjson = await response.json();
   
   // creating img element for each dog
-  Resjson.message.forEach(element => {
+   Resjson.message.forEach(element =>  {
     const dogImg = document.createElement("img")
     dogImg.className = "randomImageDog"
     dogImg.src = element
